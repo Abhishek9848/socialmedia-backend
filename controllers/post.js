@@ -16,3 +16,11 @@ exports.getPostsById =async (req, res, next)=>{
         next(error)
     }
 }
+exports.allPosts =async (req, res, next)=>{
+    try{
+        const posts = await Post.find({})
+        res.json(posts)
+    }catch(error){
+        next(error)
+    }
+}
